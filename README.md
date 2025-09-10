@@ -4,5 +4,6 @@ What’s Covered:
 - Login – Valid and invalid login scenarios
 - Registration – Creating new users with dynamic test data
 - Fund Transfer – Moving funds between accounts and verifying balances
+- Bill pay and tracking the transaction ID
 - Account Overview – Validating account details and transactions
 - UI Checks – Ensuring page elements load and display correctly
