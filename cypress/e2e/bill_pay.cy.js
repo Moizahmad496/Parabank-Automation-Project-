@@ -1,3 +1,4 @@
+import { cy } from "@faker-js/faker";
 import accountData from "../fixtures/accountNumber.json";
 
 describe("Bill Pay", () => {
@@ -19,6 +20,7 @@ describe("Bill Pay", () => {
     cy.get('input[name="verifyAccount"]').type(accountData.accountNumber);
     cy.get('input[name="payee.accountNumber"]').invoke('val').then((accountVal) => { 
       cy.get('input[name="verifyAccount"]').invoke('val').should('eq', accountVal);
+    
     });
     cy.get('input[name="amount"]').type('50');
    // cy.get("select#accountId").select(0); // Select from account
