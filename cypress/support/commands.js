@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 Cypress.Commands.add("login", (username, password) => {
-  cy.visit("https://parabank.parasoft.com/parabank/index.htm");
+  cy.visit("/index.htm");
   cy.get("input[name='username']").type(username);
   cy.get("input[name='password']").type(password);
   cy.get("input[value='Log In']").click();
