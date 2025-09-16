@@ -1,22 +1,24 @@
+
 import { faker } from "@faker-js/faker";
 
 describe("User Registration", () => {
   it("Should register a new user and login", () => {
     const username = faker.string.alphanumeric(8);
-    const password = faker.internet.password();
+    const password = faker.internet.password({ length: 10, pattern: /[A-Za-z0-9]/ });
 
     cy.visit("https://parabank.parasoft.com/parabank/register.htm");
     cy.get("#customer\\.firstName").type(faker.person.firstName());
     cy.get("#customer\\.lastName").type(faker.person.lastName());
-    cy.get('input[name="customer.address.street"]').type('Islamabad, street 1,Pakistan');
-    cy.get('input[name="customer.address.city"]').type('Islamabad');
-    cy.get('input[name="customer.address.state"]').type('Pakistan');
-    cy.get('input[name="customer.address.zipCode"]').type('44000');
-    cy.get('input[name="customer.ssn"]').type('25695');
+    cy.get('input[name="customer.address.street"]').type(faker.location.streetAddress());
+    cy.get('input[name="customer.address.city"]').type(faker.location.city());
+    cy.get('input[name="customer.address.state"]').type(faker.location.state());
+    cy.get('input[name="customer.address.zipCode"]').type(faker.location.zipCode());
+    cy.get('input[name="customer.ssn"]').type(faker.string.numeric(9));
     cy.get('input[name="customer.username"]').type(username);
     cy.get('input[name="customer.password"]').type(password);
     cy.get("#repeatedPassword").type(password);
     cy.get("input[value='Register']").click();
+    cy.get("input[value='Register.login']").type("17118")
 
     // Check if registration was successful and user is logged in
     cy.contains("Your account was created successfully").should("be.visible");

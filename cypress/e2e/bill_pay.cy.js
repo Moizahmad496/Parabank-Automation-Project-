@@ -1,9 +1,9 @@
 import accountData from "../fixtures/accountNumber.json";
 
-describe("Funds Transfer", () => {
+describe("Bill Pay", () => {
   beforeEach(() => {
-    cy.fixture('user').then((user) => {
-      cy.login(user.validUser.username, user.validUser.password);
+    cy.readFile('cypress/fixtures/registeredUser.json').then((user) => {
+      cy.login(user.username, user.password);
     });
   });
 
