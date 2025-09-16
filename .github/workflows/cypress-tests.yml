@@ -5,9 +5,9 @@ name: Cypress Tests
 # When to run this workflow
 on:
   push:
-    branches: [ "main" ]    # Runs on push to main branch
+    branches: [ "master" ]    # Runs on push to main branch
   pull_request:
-    branches: [ "main" ]    # Runs on PR to main branch
+    branches: [ "master" ]    # Runs on PR to main branch
 jobs:
   cypress-run:
     runs-on: ubuntu-latest   # GitHub provides Linux VM
@@ -29,7 +29,7 @@ jobs:
 
       # Step 4: Run Cypress tests
       - name: Run Cypress tests
-        run: npx cypress run --spec "cypress/e2e/parabank/register.cy.js"
+        run: npx cypress run --spec "cypress/e2e/register.cy.js"
 
       # (Optional) Upload screenshots if tests fail
       - name: Upload Cypress screenshots
