@@ -1,12 +1,13 @@
 name: Cypress Tests
 
 # When to run this workflow
+
+# When to run this workflow
 on:
   push:
     branches: [ "main" ]    # Runs on push to main branch
   pull_request:
     branches: [ "main" ]    # Runs on PR to main branch
-
 jobs:
   cypress-run:
     runs-on: ubuntu-latest   # GitHub provides Linux VM
