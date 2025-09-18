@@ -20,4 +20,8 @@ describe("Open New Account", () => {
   });
 
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 27624282cd414e4b5b2a26f0de2ca681bc303c50
