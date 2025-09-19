@@ -7,3 +7,4 @@ What’s Covered:
 - Bill pay and tracking the transaction ID
 - Account Overview – Validating account details and transactions
 - UI Checks – Ensuring page elements load and display correctly
+-  Pipeline Workflow with cypress configuration  - on every code push the workflow runs itself , which helps in Regression
